@@ -23,7 +23,11 @@ class CountryTable extends Component {
    componentDidMount() {
     fetch(URL + "/labels")
       .then(results => {
+        if (!results.ok) {
+          throw Error(results.statusText);
+        }
         return results.json();
+      
       }).then(data => {
 
         const labels = data.map((label) => {
@@ -42,7 +46,11 @@ class CountryTable extends Component {
 
     fetch(URL + "/countries")
       .then(results => {
+        if (!results.ok) {
+          throw Error(results.statusText);
+        }
         return results.json();
+      
       }).then(data2 => {
 
         const countries = data2.map((country) => {

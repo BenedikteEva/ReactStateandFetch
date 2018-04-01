@@ -13,7 +13,7 @@ function countryPropMany(props){
 
 const URL = "http://localhost:3333";
 
-class CountryFactory {
+class factory {
 
   constructor() {
   
